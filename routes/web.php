@@ -5,6 +5,10 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 
 
+Route::get('/registration', [UserController::class, 'registration'])->name('registration');
+
+Route::get('/login', [UserController::class, 'login'])->name('login');
+
 Route::get('/task-list', [TaskController::class, 'taskList'])->name('task.list');
 
 Route::get('/task-list/create', [TaskController::class, 'taskListCreate'])->name('task.list.create');
