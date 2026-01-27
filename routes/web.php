@@ -5,9 +5,15 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 
 
-Route::get('/registration', [UserController::class, 'registration'])->name('registration');
+Route::get('/', function () { return redirect('/login'); })->name('start');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'loginPost'])->name('login.post');
+
+Route::get('/registration', [UserController::class, 'registration'])->name('registration');
+Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
+
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/task-list', [TaskController::class, 'taskList'])->name('task.list');
 
