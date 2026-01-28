@@ -14,7 +14,7 @@
         <input type="text" name="task_name" id="task_name">
 
         <label for="task_description">Описание задачи</label>
-        <input type="text" name="task_description" id="task_description">
+        <textarea name="task_description" placeholder="Опишите свою задачу здесь..."></textarea>
 
         <button type="submit">Создать задачу</button>
     </form>
