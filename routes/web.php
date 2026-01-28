@@ -13,13 +13,13 @@ Route::post('/login', [UserController::class, 'loginPost'])->name('login.post');
 Route::get('/registration', [UserController::class, 'registration'])->name('registration');
 Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
 
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('/task-list', [TaskController::class, 'taskList'])->name('task.list');
+Route::get('/task-list', [TaskController::class, 'taskList'])->name('task.list')->middleware('auth');
 
-Route::get('/task-list/create', [TaskController::class, 'taskListCreate'])->name('task.list.create');
-Route::post('/task-list/create', [TaskController::class, 'taskCreate'])->name('task.create');
+Route::get('/task-list/create', [TaskController::class, 'taskListCreate'])->name('task.list.create')->middleware('auth');
+Route::post('/task-list/create', [TaskController::class, 'taskCreate'])->name('task.create')->middleware('auth');
 
-Route::post('/task-list/delete/{task_id}', [TaskController::class, 'taskDelete'])->name('task.delete');
+Route::post('/task-list/delete/{id}', [TaskController::class, 'taskDelete'])->name('task.delete')->middleware('auth');
 
-Route::post('/task-list/complete/{task_id}', [TaskController::class, 'taskComplete'])->name('task.complete');
+Route::post('/task-list/complete/{id}', [TaskController::class, 'taskComplete'])->name('task.complete')->middleware('auth');
