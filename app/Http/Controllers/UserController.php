@@ -18,17 +18,17 @@ class UserController extends Controller
 
     public function loginPost(UserLoginRequest $request) 
     {
-        // $credentials = $request->validated();
+        $credentials = $request->validated();
 
-        // if (!Auth::attempt($credentials)) {
-        //     return back()->withErrors([
-        //         'name' => 'Неверное имя пользователя или пароль',
-        //     ]);
-        // }
+        if (!Auth::attempt($credentials)) {
+            return back()->withErrors([
+                'email' => 'Неверный email или пароль',
+            ]);
+        }
 
-        // request()->session()->regenerate();
+        request()->session()->regenerate();
 
-        // return redirect()->intended(route('task.list'));
+        return redirect()->intended(route('task.list'));
     }
 
     public function registration() 

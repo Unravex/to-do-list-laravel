@@ -7,11 +7,11 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () { return redirect('/login'); })->name('start');
 
-Route::get('/login', [UserController::class, 'login'])->name('login');
-Route::post('/login', [UserController::class, 'loginPost'])->name('login.post');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [UserController::class, 'loginPost'])->name('login.post')->middleware('guest');
 
-Route::get('/registration', [UserController::class, 'registration'])->name('registration');
-Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
+Route::get('/registration', [UserController::class, 'registration'])->name('registration')->middleware('guest');
+Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post')->middleware('guest');
 
 Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 

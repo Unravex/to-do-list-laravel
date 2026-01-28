@@ -23,7 +23,7 @@
             <label for="name">Имя пользователя</label>
             <input type="text" name="name" id="name">
 
-            <label for="email">Email</label>
+            <label for="email">Электронная почта</label>
             <input type="email" name="email" id="email">
 
             <label for="password">Пароль</label>

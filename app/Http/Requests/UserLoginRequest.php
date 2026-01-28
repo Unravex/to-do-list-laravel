@@ -11,7 +11,7 @@ class UserLoginRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UserLoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string'],
+            'email' => ['required', 'email'],
             'password' => ['required', 'string'],
         ];
     }
@@ -30,8 +30,8 @@ class UserLoginRequest extends FormRequest
     public function messages(): array 
     {
         return [
-            'name.required' => 'Имя пользователя обязательно для заполнения',
-            'name.string' => 'Имя пользователя должно быть строковым значением',
+            'email.required' => 'Email обязателен для заполнения',
+            'email.email' => 'Укажите правильный email',
             
             'password.required' => 'Пароль обязателен для заполнения',
         ];

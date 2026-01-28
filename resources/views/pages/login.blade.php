@@ -20,8 +20,8 @@
         <form action="{{ route('login.post') }}" method="POST">
             @csrf
 
-            <label for="name">Имя пользователя</label>
-            <input type="text" name="name" id="name">
+            <label for="email">Электронная почта</label>
+            <input type="email" name="email" id="email">
 
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password">
