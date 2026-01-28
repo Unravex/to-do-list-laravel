@@ -20,6 +20,6 @@ Route::get('/task-list', [TaskController::class, 'taskList'])->name('task.list')
 Route::get('/task-list/create', [TaskController::class, 'taskListCreate'])->name('task.list.create');
 Route::post('/task-list/create', [TaskController::class, 'taskCreate'])->name('task.create');
 
-Route::post('/task-list/delete', [TaskController::class, 'taskDelete'])->name('task.delete');
+Route::post('/task-list/delete/{task_id}', [TaskController::class, 'taskDelete'])->name('task.delete');
 
-Route::post('/task-list/complete', [TaskController::class, 'taskComplete'])->name('task.complete');
+Route::post('/task-list/complete/{task_id}', [TaskController::class, 'taskComplete'])->name('task.complete');
