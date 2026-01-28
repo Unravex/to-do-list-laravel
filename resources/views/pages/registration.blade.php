@@ -18,6 +18,9 @@
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password">
 
+            <label for="password_confirmation">Подтвердите пароль</label>
+            <input type="password" name="password_confirmation" id="password_confirmation">
+
             <button type="submit">Зарегистрироваться</button>
         </form>
 
