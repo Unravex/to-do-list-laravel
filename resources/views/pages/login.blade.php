@@ -6,6 +6,17 @@
 
 @section("content")
     <div class="user-form__wrapper m-5">
+
+        @if($errors->any())
+            <div>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{ route('login.post') }}" method="POST">
             @csrf
 
