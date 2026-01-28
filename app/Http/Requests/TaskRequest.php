@@ -23,7 +23,7 @@ class TaskRequest extends FormRequest
     {
         return [
             'task_name' => ['required', 'string', 'min:3', 'max:50'],
-            'task_description' => ['required', 'string', 'min:5', 'max:255'],
+            'task_description' => ['required', 'text', 'min:5', 'max:255'],
         ];
     }
 
@@ -36,7 +36,7 @@ class TaskRequest extends FormRequest
             'task_name.max' => 'Наименование задачи должно содержать максимум 50 символов',
 
             'task_description.required' => 'Описание задачи должно быть заполнено',
-            'task_description.string' => 'Описание задачи должно быть строковым значением',
+            'task_description.text' => 'Описание задачи должно быть текстовым значением',
             'task_description.min' => 'Описание задачи должно содержать минимум 5 символов',
             'task_description.max' => 'Описание задачи должно содержать максимум 255 символов',
         ];
